@@ -1,0 +1,69 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Administrator\\source\\repos\\El mismo enano comunista 3 XDDDDDDDDDDD\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{1F467037-5FBB-4F2C-A5E5-7512C3631802}|El mismo enano comunista 3 XDDDDDDDDDDD\\El mismo enano comunista 3 XDDDDDDDDDDD.csproj|c:\\users\\administrator\\source\\repos\\el mismo enano comunista 3 xddddddddddd\\el mismo enano comunista 3 xddddddddddd\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{1F467037-5FBB-4F2C-A5E5-7512C3631802}|El mismo enano comunista 3 XDDDDDDDDDDD\\El mismo enano comunista 3 XDDDDDDDDDDD.csproj|solutionrelative:el mismo enano comunista 3 xddddddddddd\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1F467037-5FBB-4F2C-A5E5-7512C3631802}|El mismo enano comunista 3 XDDDDDDDDDDD\\El mismo enano comunista 3 XDDDDDDDDDDD.csproj|c:\\users\\administrator\\source\\repos\\el mismo enano comunista 3 xddddddddddd\\el mismo enano comunista 3 xddddddddddd\\producto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1F467037-5FBB-4F2C-A5E5-7512C3631802}|El mismo enano comunista 3 XDDDDDDDDDDD\\El mismo enano comunista 3 XDDDDDDDDDDD.csproj|solutionrelative:el mismo enano comunista 3 xddddddddddd\\producto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1F467037-5FBB-4F2C-A5E5-7512C3631802}|El mismo enano comunista 3 XDDDDDDDDDDD\\El mismo enano comunista 3 XDDDDDDDDDDD.csproj|c:\\users\\administrator\\source\\repos\\el mismo enano comunista 3 xddddddddddd\\el mismo enano comunista 3 xddddddddddd\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1F467037-5FBB-4F2C-A5E5-7512C3631802}|El mismo enano comunista 3 XDDDDDDDDDDD\\El mismo enano comunista 3 XDDDDDDDDDDD.csproj|solutionrelative:el mismo enano comunista 3 xddddddddddd\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Form1.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\Administrator\\source\\repos\\El mismo enano comunista 3 XDDDDDDDDDDD\\El mismo enano comunista 3 XDDDDDDDDDDD\\Form1.cs",
+              "RelativeDocumentMoniker": "El mismo enano comunista 3 XDDDDDDDDDDD\\Form1.cs",
+              "ToolTip": "C:\\Users\\Administrator\\source\\repos\\El mismo enano comunista 3 XDDDDDDDDDDD\\El mismo enano comunista 3 XDDDDDDDDDDD\\Form1.cs [Dise\u00F1o]",
+              "RelativeToolTip": "El mismo enano comunista 3 XDDDDDDDDDDD\\Form1.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-31T22:45:23.949Z",
+              "IsPinned": true,
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Form1.cs",
+              "DocumentMoniker": "C:\\Users\\Administrator\\source\\repos\\El mismo enano comunista 3 XDDDDDDDDDDD\\El mismo enano comunista 3 XDDDDDDDDDDD\\Form1.cs",
+              "RelativeDocumentMoniker": "El mismo enano comunista 3 XDDDDDDDDDDD\\Form1.cs",
+              "ToolTip": "C:\\Users\\Administrator\\source\\repos\\El mismo enano comunista 3 XDDDDDDDDDDD\\El mismo enano comunista 3 XDDDDDDDDDDD\\Form1.cs",
+              "RelativeToolTip": "El mismo enano comunista 3 XDDDDDDDDDDD\\Form1.cs",
+              "ViewState": "AQIAAAQAAAAAAAAAAAD4vxAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-31T22:51:13.016Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Producto.cs",
+              "DocumentMoniker": "C:\\Users\\Administrator\\source\\repos\\El mismo enano comunista 3 XDDDDDDDDDDD\\El mismo enano comunista 3 XDDDDDDDDDDD\\Producto.cs",
+              "RelativeDocumentMoniker": "El mismo enano comunista 3 XDDDDDDDDDDD\\Producto.cs",
+              "ToolTip": "C:\\Users\\Administrator\\source\\repos\\El mismo enano comunista 3 XDDDDDDDDDDD\\El mismo enano comunista 3 XDDDDDDDDDDD\\Producto.cs",
+              "RelativeToolTip": "El mismo enano comunista 3 XDDDDDDDDDDD\\Producto.cs",
+              "ViewState": "AQIAAAgAAAAAAAAAAAAQwBQAAAArAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-31T22:47:00.449Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
