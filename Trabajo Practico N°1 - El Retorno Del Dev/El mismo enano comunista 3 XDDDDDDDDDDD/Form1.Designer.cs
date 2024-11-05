@@ -28,26 +28,35 @@
         /// </summary>
         private void InitializeComponent()
         {
-            button1 = new Button();
+            buttonAgregar = new Button();
             label1 = new Label();
             label2 = new Label();
             label3 = new Label();
             textBox1 = new TextBox();
             textBox2 = new TextBox();
             textBox3 = new TextBox();
+            buttonEditar = new Button();
+            buttonEliminar = new Button();
+            dataGridView1 = new DataGridView();
+            ListaXD = new Label();
+            buttonBuscar = new Button();
+            textBox4 = new TextBox();
+            label4 = new Label();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
-            // button1
+            // buttonAgregar
             // 
-            button1.Font = new Font("Segoe UI", 12F);
-            button1.ForeColor = SystemColors.ActiveCaptionText;
-            button1.Location = new Point(394, 65);
-            button1.Name = "button1";
-            button1.Size = new Size(320, 299);
-            button1.TabIndex = 0;
-            button1.Text = "Agregar Producto";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
+            buttonAgregar.BackColor = Color.FromArgb(128, 255, 128);
+            buttonAgregar.Font = new Font("Segoe UI", 12F);
+            buttonAgregar.ForeColor = SystemColors.ActiveCaptionText;
+            buttonAgregar.Location = new Point(31, 394);
+            buttonAgregar.Name = "buttonAgregar";
+            buttonAgregar.Size = new Size(320, 34);
+            buttonAgregar.TabIndex = 0;
+            buttonAgregar.Text = "Agregar Producto";
+            buttonAgregar.UseVisualStyleBackColor = false;
+            buttonAgregar.Click += buttonAgregar_Click;
             // 
             // label1
             // 
@@ -87,6 +96,7 @@
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(154, 116);
             textBox1.TabIndex = 4;
+            textBox1.TextChanged += textBox1_TextChanged;
             // 
             // textBox2
             // 
@@ -102,34 +112,129 @@
             textBox3.Name = "textBox3";
             textBox3.Size = new Size(154, 23);
             textBox3.TabIndex = 6;
-            textBox3.TextChanged += textBox3_TextChanged;
+            textBox3.TextChanged += textBox2_TextChanged;
+            // 
+            // buttonEditar
+            // 
+            buttonEditar.BackColor = Color.FromArgb(255, 255, 128);
+            buttonEditar.Font = new Font("Segoe UI", 12F);
+            buttonEditar.ForeColor = SystemColors.ActiveCaptionText;
+            buttonEditar.Location = new Point(31, 455);
+            buttonEditar.Name = "buttonEditar";
+            buttonEditar.Size = new Size(320, 34);
+            buttonEditar.TabIndex = 7;
+            buttonEditar.Text = "Editar Producto";
+            buttonEditar.UseVisualStyleBackColor = false;
+            buttonEditar.Click += buttonEditar_Click;
+            // 
+            // buttonEliminar
+            // 
+            buttonEliminar.BackColor = Color.FromArgb(255, 128, 128);
+            buttonEliminar.Font = new Font("Segoe UI", 12F);
+            buttonEliminar.ForeColor = SystemColors.ActiveCaptionText;
+            buttonEliminar.Location = new Point(31, 516);
+            buttonEliminar.Name = "buttonEliminar";
+            buttonEliminar.Size = new Size(320, 34);
+            buttonEliminar.TabIndex = 8;
+            buttonEliminar.Text = "Eliminar Producto";
+            buttonEliminar.UseVisualStyleBackColor = false;
+            buttonEliminar.Click += buttonEliminar_Click;
+            // 
+            // dataGridView1
+            // 
+            dataGridView1.BackgroundColor = SystemColors.Control;
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.GridColor = SystemColors.InactiveCaptionText;
+            dataGridView1.Location = new Point(440, 59);
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.Size = new Size(701, 259);
+            dataGridView1.TabIndex = 9;
+            // 
+            // ListaXD
+            // 
+            ListaXD.AutoSize = true;
+            ListaXD.Font = new Font("Segoe UI", 12F);
+            ListaXD.Location = new Point(731, 24);
+            ListaXD.Name = "ListaXD";
+            ListaXD.Size = new Size(139, 21);
+            ListaXD.TabIndex = 10;
+            ListaXD.Text = "Lista De Productos";
+            // 
+            // buttonBuscar
+            // 
+            buttonBuscar.BackColor = Color.FromArgb(128, 128, 255);
+            buttonBuscar.Font = new Font("Segoe UI", 12F);
+            buttonBuscar.ForeColor = SystemColors.ActiveCaptionText;
+            buttonBuscar.Location = new Point(440, 394);
+            buttonBuscar.Name = "buttonBuscar";
+            buttonBuscar.Size = new Size(160, 34);
+            buttonBuscar.TabIndex = 11;
+            buttonBuscar.Text = "buscar Producto";
+            buttonBuscar.UseVisualStyleBackColor = false;
+            // 
+            // textBox4
+            // 
+            textBox4.Location = new Point(636, 394);
+            textBox4.Multiline = true;
+            textBox4.Name = "textBox4";
+            textBox4.Size = new Size(154, 34);
+            textBox4.TabIndex = 12;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Font = new Font("Segoe UI", 12F);
+            label4.Location = new Point(440, 444);
+            label4.Name = "label4";
+            label4.Size = new Size(105, 21);
+            label4.TabIndex = 13;
+            label4.Text = "Ingrese un ID:";
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            BackColor = SystemColors.ControlLight;
+            ClientSize = new Size(1153, 622);
+            Controls.Add(label4);
+            Controls.Add(textBox4);
+            Controls.Add(buttonBuscar);
+            Controls.Add(ListaXD);
+            Controls.Add(dataGridView1);
+            Controls.Add(buttonEliminar);
+            Controls.Add(buttonEditar);
             Controls.Add(textBox3);
             Controls.Add(textBox2);
             Controls.Add(textBox1);
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(label1);
-            Controls.Add(button1);
+            Controls.Add(buttonAgregar);
             Name = "Form1";
             Text = "Form1";
+            Load += Form1_Load;
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
-        private Button button1;
+        private Button buttonBuscar;
         private Label label1;
         private Label label2;
         private Label label3;
         private TextBox textBox1;
         private TextBox textBox2;
         private TextBox textBox3;
+        private Button button2;
+        private Button button3;
+        private Button buttonAgregar;
+        private Button buttonEditar;
+        private Button buttonEliminar;
+        private DataGridView dataGridView1;
+        private Label ListaXD;
+        private TextBox textBox4;
+        private Label label4;
     }
 }

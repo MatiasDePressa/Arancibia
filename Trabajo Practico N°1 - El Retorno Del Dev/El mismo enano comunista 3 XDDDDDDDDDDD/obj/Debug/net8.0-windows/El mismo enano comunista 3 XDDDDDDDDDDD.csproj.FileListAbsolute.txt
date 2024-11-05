@@ -1,0 +1,17 @@
+D:\Documentos\Programacion\Arancibia\Trabajo Practico N°1 - El Retorno Del Dev\El mismo enano comunista 3 XDDDDDDDDDDD\bin\Debug\net8.0-windows\El mismo enano comunista 3 XDDDDDDDDDDD.exe
+D:\Documentos\Programacion\Arancibia\Trabajo Practico N°1 - El Retorno Del Dev\El mismo enano comunista 3 XDDDDDDDDDDD\bin\Debug\net8.0-windows\El mismo enano comunista 3 XDDDDDDDDDDD.deps.json
+D:\Documentos\Programacion\Arancibia\Trabajo Practico N°1 - El Retorno Del Dev\El mismo enano comunista 3 XDDDDDDDDDDD\bin\Debug\net8.0-windows\El mismo enano comunista 3 XDDDDDDDDDDD.runtimeconfig.json
+D:\Documentos\Programacion\Arancibia\Trabajo Practico N°1 - El Retorno Del Dev\El mismo enano comunista 3 XDDDDDDDDDDD\bin\Debug\net8.0-windows\El mismo enano comunista 3 XDDDDDDDDDDD.dll
+D:\Documentos\Programacion\Arancibia\Trabajo Practico N°1 - El Retorno Del Dev\El mismo enano comunista 3 XDDDDDDDDDDD\bin\Debug\net8.0-windows\El mismo enano comunista 3 XDDDDDDDDDDD.pdb
+D:\Documentos\Programacion\Arancibia\Trabajo Practico N°1 - El Retorno Del Dev\El mismo enano comunista 3 XDDDDDDDDDDD\obj\Debug\net8.0-windows\El_mismo_enano_comunista_3_XDDDDDDDDDDD.Form1.resources
+D:\Documentos\Programacion\Arancibia\Trabajo Practico N°1 - El Retorno Del Dev\El mismo enano comunista 3 XDDDDDDDDDDD\obj\Debug\net8.0-windows\El mismo enano comunista 3 XDDDDDDDDDDD.csproj.GenerateResource.cache
+D:\Documentos\Programacion\Arancibia\Trabajo Practico N°1 - El Retorno Del Dev\El mismo enano comunista 3 XDDDDDDDDDDD\obj\Debug\net8.0-windows\El mismo enano comunista 3 XDDDDDDDDDDD.GeneratedMSBuildEditorConfig.editorconfig
+D:\Documentos\Programacion\Arancibia\Trabajo Practico N°1 - El Retorno Del Dev\El mismo enano comunista 3 XDDDDDDDDDDD\obj\Debug\net8.0-windows\El mismo enano comunista 3 XDDDDDDDDDDD.AssemblyInfoInputs.cache
+D:\Documentos\Programacion\Arancibia\Trabajo Practico N°1 - El Retorno Del Dev\El mismo enano comunista 3 XDDDDDDDDDDD\obj\Debug\net8.0-windows\El mismo enano comunista 3 XDDDDDDDDDDD.AssemblyInfo.cs
+D:\Documentos\Programacion\Arancibia\Trabajo Practico N°1 - El Retorno Del Dev\El mismo enano comunista 3 XDDDDDDDDDDD\obj\Debug\net8.0-windows\El mismo enano comunista 3 XDDDDDDDDDDD.csproj.CoreCompileInputs.cache
+D:\Documentos\Programacion\Arancibia\Trabajo Practico N°1 - El Retorno Del Dev\El mismo enano comunista 3 XDDDDDDDDDDD\obj\Debug\net8.0-windows\El mismo enano comunista 3 XDDDDDDDDDDD.sourcelink.json
+D:\Documentos\Programacion\Arancibia\Trabajo Practico N°1 - El Retorno Del Dev\El mismo enano comunista 3 XDDDDDDDDDDD\obj\Debug\net8.0-windows\El mismo enano comunista 3 XDDDDDDDDDDD.dll
+D:\Documentos\Programacion\Arancibia\Trabajo Practico N°1 - El Retorno Del Dev\El mismo enano comunista 3 XDDDDDDDDDDD\obj\Debug\net8.0-windows\refint\El mismo enano comunista 3 XDDDDDDDDDDD.dll
+D:\Documentos\Programacion\Arancibia\Trabajo Practico N°1 - El Retorno Del Dev\El mismo enano comunista 3 XDDDDDDDDDDD\obj\Debug\net8.0-windows\El mismo enano comunista 3 XDDDDDDDDDDD.pdb
+D:\Documentos\Programacion\Arancibia\Trabajo Practico N°1 - El Retorno Del Dev\El mismo enano comunista 3 XDDDDDDDDDDD\obj\Debug\net8.0-windows\El mismo enano comunista 3 XDDDDDDDDDDD.genruntimeconfig.cache
+D:\Documentos\Programacion\Arancibia\Trabajo Practico N°1 - El Retorno Del Dev\El mismo enano comunista 3 XDDDDDDDDDDD\obj\Debug\net8.0-windows\ref\El mismo enano comunista 3 XDDDDDDDDDDD.dll
