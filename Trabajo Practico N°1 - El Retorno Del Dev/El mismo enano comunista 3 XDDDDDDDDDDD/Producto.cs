@@ -8,13 +8,13 @@ namespace El_mismo_enano_comunista_3_XDDDDDDDDDDD
 {
     public class Categoria
     {
-        public int id { get; set; }
-        public string nombre { get; set; }
+        public int Id { get; set; }
+        public string Nombre { get; set; }
 
         public Categoria(int id, string nombre)
         {
-            this.id = id;
-            this.nombre = nombre;
+            this.Id = id;
+            this.Nombre = nombre;
         }
     }
 
@@ -37,6 +37,11 @@ namespace El_mismo_enano_comunista_3_XDDDDDDDDDDD
     public static class RepositorioGlobal
     {
         public static List<Producto> repositorio = new List<Producto>();
+    }
+
+    public static class RepositorioCategorias
+    {
+        public static List<Categoria> categorias = new List<Categoria>();
     }
 
 }

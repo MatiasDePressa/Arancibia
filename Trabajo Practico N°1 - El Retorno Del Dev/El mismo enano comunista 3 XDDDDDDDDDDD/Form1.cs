@@ -1,5 +1,12 @@
 using System.Windows.Forms;
 
+//hay 5.000.000 de trys mas que nada para aquellos usuarios que sean
+//"especiales". Ahora si quiere saber por que el nombre del proyecto es tan curioso
+//visite https://www.youtube.com/watch?v=eFE8NOD4qlE&t=23s
+//en los primero 15 segundos del video esta el lore
+//que vuelva chusommontero
+//voy a armar una campaña de kickstarted para que vuelva el no hiter
+//chuso te extrañamos, gracias por tanto, perdon por tan poco :,(
 namespace El_mismo_enano_comunista_3_XDDDDDDDDDDD
 {
     public partial class Form1 : Form
@@ -9,13 +16,32 @@ namespace El_mismo_enano_comunista_3_XDDDDDDDDDDD
             InitializeComponent();
         }
 
+        //Carga de datos en el datagridview
+        //si ya existen datos en el grid los elimina para evitar que se muestre la lista nueva 
+        //y la lista anterior al mismo tiempo
+        //se podria haber llamado actualizar grid y daba lo mismo
+        //muchos errores en tan poco tiempo me estan quitando años de vida
+        //solo quiero mi titulo
+        //y una bebida de cebada y lupulo fermentado
+        //(se me murio el 50% del cerebro pensando en porque no funcionaba la carga)
         private void CargarDatosEnDataGridView()
         {
             dataGridView1.DataSource = null;
             dataGridView1.DataSource = RepositorioGlobal.repositorio;
         }
 
-        // Método para validar los datos del producto
+        public void ActualizarComboBoxCategorias()
+        {
+            textBox6.DataSource = null;
+            textBox6.DataSource = RepositorioCategorias.categorias;
+            textBox6.DisplayMember = "Nombre";
+            textBox6.ValueMember = "Id";
+        }
+
+
+        //validar los datos del producto (no estoy orgulloso de esta funcion, pero al menos funciona)
+        //dato curioso es solo una segunda barrera en caso de que la validacion por teclas no ande
+        //y para la descripcion que no tiene validacion como tal
         private bool ValidarProducto()
         {
             if (string.IsNullOrWhiteSpace(textBox3.Text) || !int.TryParse(textBox3.Text, out _))
@@ -36,7 +62,10 @@ namespace El_mismo_enano_comunista_3_XDDDDDDDDDDD
             return true;
         }
 
-        // Método para validar solo números en el TextBox de id
+        //validar solo números en el TextBox de id
+        //lo hago mediante una llamada cada vez que cambia el texto
+        //evita que cierto tipó de usuarios coloquen lo que quieran cuando quieran
+        //esta bastante facherazo *chasquidos*
         private void textBox3_TextChanged(object sender, EventArgs e)
         {
             if (System.Text.RegularExpressions.Regex.IsMatch(textBox3.Text, "[^0-9]"))
@@ -46,7 +75,8 @@ namespace El_mismo_enano_comunista_3_XDDDDDDDDDDD
             }
         }
 
-        // Método para validar solo decimales en el TextBox de Precio
+        //validar solo decimales en el TextBox de Precio
+        //lo mismo de arriba solo que para el precio
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
             if (System.Text.RegularExpressions.Regex.IsMatch(textBox2.Text, "[^0-9.]"))
@@ -56,31 +86,11 @@ namespace El_mismo_enano_comunista_3_XDDDDDDDDDDD
             }
         }
 
-        private void ActualizarProducto()
-        {
-            try
-            {
-                int id = int.Parse(textBox3.Text);
-                Producto producto = RepositorioGlobal.repositorio.FirstOrDefault(p => p.id == id);
-
-                if (producto != null)
-                {
-                    producto.precio = decimal.Parse(textBox2.Text);
-                    producto.descripcion = textBox1.Text;
-
-                    // Actualizar DataGridView
-                    CargarDatosEnDataGridView();
-                }
-            }
-            catch
-            {
-                MessageBox.Show("Error Funcion Actualizar");
-            }
-        }
-
+        //agregar un producto a la lista
+        //no tiene mucha logica, toma los datos de los textbox, crea un objeto Producto,
+        //lo almacena en la lista y lo muestra en el grid
         private void buttonAgregar_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Boton Presionado");
             try
             {
                 if (!ValidarProducto())
@@ -102,7 +112,6 @@ namespace El_mismo_enano_comunista_3_XDDDDDDDDDDD
                 textBox2.Clear();
                 textBox3.Clear();
 
-                // Actualizar DataGridView
                 CargarDatosEnDataGridView();
             }
             catch (FormatException ex)
@@ -111,7 +120,8 @@ namespace El_mismo_enano_comunista_3_XDDDDDDDDDDD
             }
         }
 
-
+        //la logica es la misma que en la del boton agregar 
+        //solo que busca el id en la lista y sobreescribe los datos del precio y de la descripcion
         private void buttonEditar_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Boton Presionado");
@@ -133,10 +143,8 @@ namespace El_mismo_enano_comunista_3_XDDDDDDDDDDD
 
                     MessageBox.Show($"Producto actualizado:\nid: {producto.id}\nPrecio: {producto.precio}\nDescripción: {producto.descripcion}");
 
-                    // Actualizar DataGridView
                     CargarDatosEnDataGridView();
 
-                    // Limpiar TextBoxes
                     textBox1.Clear();
                     textBox2.Clear();
                     textBox3.Clear();
@@ -152,6 +160,12 @@ namespace El_mismo_enano_comunista_3_XDDDDDDDDDDD
             }
         }
 
+        //recorre la lista, encuentra el id, si lo encuentra: agarra los datos y los muestra en el
+        //label, si no los encuentra: te dice "no manin, tu no estas en la lista no te puedo dejar
+        //pasar. por favor sea respetuoso, esta noche tenemos fiesta privada y el local esta cerrado
+        //al publico general, le voy a pedir amablemente que se retire que esta demorando el ingreso
+        //de las personas que si han sido invitadas. sino se va tendre que llamar a la guardia civil
+        //para que se lo lleven, asi que por favor vaya marchando"
         private void buttonBuscar_Click(object sender, EventArgs e)
         {
             try
@@ -175,6 +189,9 @@ namespace El_mismo_enano_comunista_3_XDDDDDDDDDDD
             }
         }
 
+
+        //tiene la misma logica, busca el id y lo manda a volar, aqui no hace falta que se le 
+        //coloque nada en el precio o la descripcion, mas que nada porque es totalmente useless
         private void buttonEliminar_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Boton Presionado");
@@ -190,10 +207,8 @@ namespace El_mismo_enano_comunista_3_XDDDDDDDDDDD
 
                     MessageBox.Show($"Producto eliminado:\nid: {id}");
 
-                    // Actualizar DataGridView
                     CargarDatosEnDataGridView();
 
-                    // Limpiar TextBoxes
                     textBox1.Clear();
                     textBox2.Clear();
                     textBox3.Clear();
@@ -209,9 +224,18 @@ namespace El_mismo_enano_comunista_3_XDDDDDDDDDDD
             }
         }
 
+        //al cargar el formulario tambien carga el grid
+        //es mas que nada para hacer limpieza del sistema y evitar errores
+        //maybe no es lo mejor pero funca
         private void Form1_Load(object sender, EventArgs e)
         {
             CargarDatosEnDataGridView();
+        }
+
+        private void irACategoria_Click(object sender, EventArgs e)
+        {
+            Form2 form2 = new Form2();
+            //form2.Show();
         }
 
     }

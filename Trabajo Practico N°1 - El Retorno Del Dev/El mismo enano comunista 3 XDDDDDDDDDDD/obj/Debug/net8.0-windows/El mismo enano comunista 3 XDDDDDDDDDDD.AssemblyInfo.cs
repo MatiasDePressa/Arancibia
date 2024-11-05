@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("El mismo enano comunista 3 XDDDDDDDDDDD")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ae5fe7f50d1e8bc852968c4cfdd7d2956aaf2ee1")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b7dc371722cca2387fc959931ea9e92fca2419aa")]
 [assembly: System.Reflection.AssemblyProductAttribute("El mismo enano comunista 3 XDDDDDDDDDDD")]
 [assembly: System.Reflection.AssemblyTitleAttribute("El mismo enano comunista 3 XDDDDDDDDDDD")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

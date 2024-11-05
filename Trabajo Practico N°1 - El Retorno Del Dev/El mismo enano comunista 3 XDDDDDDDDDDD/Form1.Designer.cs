@@ -45,6 +45,7 @@
             textBox6 = new ComboBox();
             label6 = new Label();
             label5 = new Label();
+            irACategoria = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
@@ -219,12 +220,26 @@
             label5.TabIndex = 16;
             label5.Text = "Resultado:";
             // 
+            // irACategoria
+            // 
+            irACategoria.BackColor = Color.FromArgb(128, 255, 128);
+            irACategoria.Font = new Font("Segoe UI", 12F);
+            irACategoria.ForeColor = SystemColors.ActiveCaptionText;
+            irACategoria.Location = new Point(442, 489);
+            irACategoria.Name = "irACategoria";
+            irACategoria.Size = new Size(257, 34);
+            irACategoria.TabIndex = 17;
+            irACategoria.Text = "Agregar categoria";
+            irACategoria.UseVisualStyleBackColor = false;
+            //irACategoria.Click += irACategoria_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ControlLight;
             ClientSize = new Size(1153, 622);
+            Controls.Add(irACategoria);
             Controls.Add(label5);
             Controls.Add(label6);
             Controls.Add(textBox6);
@@ -253,12 +268,12 @@
         #endregion
 
         private Button buttonBuscar;
-        private Label label1;
-        private Label label2;
+        private Label label1; // aca no les cambie los nombres por que era mi primer
+        private Label label2; // form en c# y no tenia ni idea de que estaba haciendo
         private Label label3;
-        private TextBox textBox1;
-        private TextBox textBox2;
-        private TextBox textBox3;
+        private TextBox textBox1; //descrp
+        private TextBox textBox2; //precio   no tengo ni idea de por que se colocaron al reves
+        private TextBox textBox3; //id       pero fuck off, no me importa mucho, me hizo reir bastante
         private Button buttonAgregar;
         private Button buttonEditar;
         private Button buttonEliminar;
@@ -269,5 +284,6 @@
         private ComboBox textBox6;
         private Label label6;
         private Label label5;
+        private Button irACategoria;
     }
 }
