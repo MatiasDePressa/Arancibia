@@ -9,12 +9,18 @@ namespace El_mismo_enano_comunista_3_XDDDDDDDDDDD
             InitializeComponent();
         }
 
+        private void CargarDatosEnDataGridView()
+        {
+            dataGridView1.DataSource = null;
+            dataGridView1.DataSource = RepositorioGlobal.repositorio;
+        }
+
         // Método para validar los datos del producto
         private bool ValidarProducto()
         {
             if (string.IsNullOrWhiteSpace(textBox3.Text) || !int.TryParse(textBox3.Text, out _))
             {
-                MessageBox.Show("ID inválido. Debe ser un número.");
+                MessageBox.Show("id inválido. Debe ser un número.");
                 return false;
             }
             if (string.IsNullOrWhiteSpace(textBox2.Text) || !decimal.TryParse(textBox2.Text, out _))
@@ -30,7 +36,7 @@ namespace El_mismo_enano_comunista_3_XDDDDDDDDDDD
             return true;
         }
 
-        // Método para validar solo números en el TextBox de ID
+        // Método para validar solo números en el TextBox de id
         private void textBox3_TextChanged(object sender, EventArgs e)
         {
             if (System.Text.RegularExpressions.Regex.IsMatch(textBox3.Text, "[^0-9]"))
@@ -61,10 +67,10 @@ namespace El_mismo_enano_comunista_3_XDDDDDDDDDDD
                 {
                     producto.precio = decimal.Parse(textBox2.Text);
                     producto.descripcion = textBox1.Text;
-                    // Actualizar DataGridView
-                    dataGridView1.Refresh();
-                }
 
+                    // Actualizar DataGridView
+                    CargarDatosEnDataGridView();
+                }
             }
             catch
             {
@@ -74,25 +80,30 @@ namespace El_mismo_enano_comunista_3_XDDDDDDDDDDD
 
         private void buttonAgregar_Click(object sender, EventArgs e)
         {
-            // Validaciones y creación del producto
+            MessageBox.Show("Boton Presionado");
             try
             {
+                if (!ValidarProducto())
+                {
+                    return;
+                }
+
                 int id = int.Parse(textBox3.Text);
                 decimal precio = decimal.Parse(textBox2.Text);
                 string descripcion = textBox1.Text;
 
                 Producto nuevoProducto = new Producto(id, precio, descripcion);
 
-                // Añadir el producto al repositorio
                 RepositorioGlobal.repositorio.Add(nuevoProducto);
 
-                // Mostrar alerta
-                MessageBox.Show($"Producto generado:\nID: {id}\nPrecio: {precio}\nDescripción: {descripcion}");
+                MessageBox.Show($"Producto generado:\nid: {id}\nPrecio: {precio}\nDescripción: {descripcion}");
 
-                // Limpiar TextBoxes
                 textBox1.Clear();
                 textBox2.Clear();
                 textBox3.Clear();
+
+                // Actualizar DataGridView
+                CargarDatosEnDataGridView();
             }
             catch (FormatException ex)
             {
@@ -100,81 +111,107 @@ namespace El_mismo_enano_comunista_3_XDDDDDDDDDDD
             }
         }
 
+
         private void buttonEditar_Click(object sender, EventArgs e)
         {
+            MessageBox.Show("Boton Presionado");
+
             try
             {
-                if (dataGridView1.SelectedRows.Count > 0)
+                if (!ValidarProducto())
                 {
-                    int id = Convert.ToInt32(dataGridView1.SelectedRows[0].Cells["Id"].Value);
-                    Producto producto = RepositorioGlobal.repositorio.FirstOrDefault(p => p.id == id);
+                    return;
+                }
 
-                    if (producto != null)
-                    {
-                        textBox3.Text = producto.id.ToString();
-                        textBox2.Text = producto.precio.ToString();
-                        textBox1.Text = producto.descripcion;
-                    }
-                    else
-                    {
-                        MessageBox.Show("Error Boton Editar, producto null");
-                    }
+                int id = int.Parse(textBox3.Text);
+                Producto producto = RepositorioGlobal.repositorio.FirstOrDefault(p => p.id == id);
+
+                if (producto != null)
+                {
+                    producto.precio = decimal.Parse(textBox2.Text);
+                    producto.descripcion = textBox1.Text;
+
+                    MessageBox.Show($"Producto actualizado:\nid: {producto.id}\nPrecio: {producto.precio}\nDescripción: {producto.descripcion}");
+
+                    // Actualizar DataGridView
+                    CargarDatosEnDataGridView();
+
+                    // Limpiar TextBoxes
+                    textBox1.Clear();
+                    textBox2.Clear();
+                    textBox3.Clear();
+                }
+                else
+                {
+                    MessageBox.Show("Error Boton Editar, producto no encontrado");
                 }
             }
-            catch
+            catch (Exception ex)
             {
-                MessageBox.Show("Error Boton Editar");
+                MessageBox.Show($"Error Boton Editar: {ex.Message}");
             }
-
         }
 
         private void buttonBuscar_Click(object sender, EventArgs e)
         {
-            int id = int.Parse(textBox4.Text);
-            Producto producto = RepositorioGlobal.repositorio.FirstOrDefault(p => p.Id == id);
-        
-            if (producto != null)
+            try
             {
-                label4.Text = $"Producto encontrado:\nID: {producto.id}\nPrecio: {producto.precio}\nDescripción: {producto.descripcion}";
+                MessageBox.Show("Boton Presionado");
+                int id = int.Parse(textBox4.Text);
+                Producto producto = RepositorioGlobal.repositorio.FirstOrDefault(p => p.id == id);
+
+                if (producto != null)
+                {
+                    label4.Text = $"Producto encontrado:\nid: {producto.id}\nPrecio: {producto.precio}\nDescripción: {producto.descripcion}";
+                }
+                else
+                {
+                    label4.Text = "Producto no encontrado.";
+                }
             }
-            else
+            catch
             {
-                label4.Text = "Producto no encontrado.";
+                MessageBox.Show("Error al Buscar un Producto");
             }
         }
 
         private void buttonEliminar_Click(object sender, EventArgs e)
         {
-            if (dataGridView1.SelectedRows.Count > 0)
+            MessageBox.Show("Boton Presionado");
+
+            try
             {
-                int id = Convert.ToInt32(dataGridView1.SelectedRows[0].Cells["Id"].Value);
+                int id = int.Parse(textBox3.Text);
                 Producto producto = RepositorioGlobal.repositorio.FirstOrDefault(p => p.id == id);
 
                 if (producto != null)
                 {
                     RepositorioGlobal.repositorio.Remove(producto);
+
+                    MessageBox.Show($"Producto eliminado:\nid: {id}");
+
                     // Actualizar DataGridView
-                    dataGridView1.Rows.RemoveAt(dataGridView1.SelectedRows[0].Index);
+                    CargarDatosEnDataGridView();
+
+                    // Limpiar TextBoxes
+                    textBox1.Clear();
+                    textBox2.Clear();
+                    textBox3.Clear();
                 }
                 else
                 {
-                    MessageBox.Show("Error Boton Borrar, producto null");
+                    MessageBox.Show("Error Boton Eliminar, producto no encontrado");
                 }
             }
-        }
-
-        // Otros manejadores de eventos de tu formulario
-        private void label2_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error Boton Eliminar: {ex.Message}");
+            }
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            CargarDatosEnDataGridView();
         }
 
     }

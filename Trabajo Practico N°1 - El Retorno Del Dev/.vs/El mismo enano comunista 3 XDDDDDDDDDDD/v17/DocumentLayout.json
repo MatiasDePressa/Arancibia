@@ -3,12 +3,12 @@
   "WorkspaceRootPath": "D:\\Documentos\\Programacion\\Arancibia\\Trabajo Practico N\u00B01 - El Retorno Del Dev\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{1F467037-5FBB-4F2C-A5E5-7512C3631802}|El mismo enano comunista 3 XDDDDDDDDDDD\\El mismo enano comunista 3 XDDDDDDDDDDD.csproj|d:\\documentos\\programacion\\arancibia\\trabajo practico n\u00B01 - el retorno del dev\\el mismo enano comunista 3 xddddddddddd\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1F467037-5FBB-4F2C-A5E5-7512C3631802}|El mismo enano comunista 3 XDDDDDDDDDDD\\El mismo enano comunista 3 XDDDDDDDDDDD.csproj|solutionrelative:el mismo enano comunista 3 xddddddddddd\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{1F467037-5FBB-4F2C-A5E5-7512C3631802}|El mismo enano comunista 3 XDDDDDDDDDDD\\El mismo enano comunista 3 XDDDDDDDDDDD.csproj|d:\\documentos\\programacion\\arancibia\\trabajo practico n\u00B01 - el retorno del dev\\el mismo enano comunista 3 xddddddddddd\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{1F467037-5FBB-4F2C-A5E5-7512C3631802}|El mismo enano comunista 3 XDDDDDDDDDDD\\El mismo enano comunista 3 XDDDDDDDDDDD.csproj|solutionrelative:el mismo enano comunista 3 xddddddddddd\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1F467037-5FBB-4F2C-A5E5-7512C3631802}|El mismo enano comunista 3 XDDDDDDDDDDD\\El mismo enano comunista 3 XDDDDDDDDDDD.csproj|d:\\documentos\\programacion\\arancibia\\trabajo practico n\u00B01 - el retorno del dev\\el mismo enano comunista 3 xddddddddddd\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1F467037-5FBB-4F2C-A5E5-7512C3631802}|El mismo enano comunista 3 XDDDDDDDDDDD\\El mismo enano comunista 3 XDDDDDDDDDDD.csproj|solutionrelative:el mismo enano comunista 3 xddddddddddd\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{1F467037-5FBB-4F2C-A5E5-7512C3631802}|El mismo enano comunista 3 XDDDDDDDDDDD\\El mismo enano comunista 3 XDDDDDDDDDDD.csproj|d:\\documentos\\programacion\\arancibia\\trabajo practico n\u00B01 - el retorno del dev\\el mismo enano comunista 3 xddddddddddd\\form1.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -17,6 +17,10 @@
     {
       "AbsoluteMoniker": "D:0:0:{1F467037-5FBB-4F2C-A5E5-7512C3631802}|El mismo enano comunista 3 XDDDDDDDDDDD\\El mismo enano comunista 3 XDDDDDDDDDDD.csproj|d:\\documentos\\programacion\\arancibia\\trabajo practico n\u00B01 - el retorno del dev\\el mismo enano comunista 3 xddddddddddd\\producto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1F467037-5FBB-4F2C-A5E5-7512C3631802}|El mismo enano comunista 3 XDDDDDDDDDDD\\El mismo enano comunista 3 XDDDDDDDDDDD.csproj|solutionrelative:el mismo enano comunista 3 xddddddddddd\\producto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1F467037-5FBB-4F2C-A5E5-7512C3631802}|El mismo enano comunista 3 XDDDDDDDDDDD\\El mismo enano comunista 3 XDDDDDDDDDDD.csproj|D:\\Documentos\\Programacion\\Arancibia\\Trabajo Practico N\u00B01 - El Retorno Del Dev\\el mismo enano comunista 3 xddddddddddd\\form2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{1F467037-5FBB-4F2C-A5E5-7512C3631802}|El mismo enano comunista 3 XDDDDDDDDDDD\\El mismo enano comunista 3 XDDDDDDDDDDD.csproj|solutionrelative:el mismo enano comunista 3 xddddddddddd\\form2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -25,24 +29,31 @@
       "VerticalTabListWidth": 256,
       "DocumentGroups": [
         {
-          "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "DockedWidth": 198,
+          "SelectedChildIndex": 0,
           "Children": [
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
-            },
-            {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "Form1.cs [Dise\u00F1o]",
               "DocumentMoniker": "D:\\Documentos\\Programacion\\Arancibia\\Trabajo Practico N\u00B01 - El Retorno Del Dev\\El mismo enano comunista 3 XDDDDDDDDDDD\\Form1.cs",
               "RelativeDocumentMoniker": "El mismo enano comunista 3 XDDDDDDDDDDD\\Form1.cs",
               "ToolTip": "D:\\Documentos\\Programacion\\Arancibia\\Trabajo Practico N\u00B01 - El Retorno Del Dev\\El mismo enano comunista 3 XDDDDDDDDDDD\\Form1.cs [Dise\u00F1o]",
               "RelativeToolTip": "El mismo enano comunista 3 XDDDDDDDDDDD\\Form1.cs [Dise\u00F1o]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-05T18:38:49.616Z",
+              "WhenOpened": "2024-11-05T20:15:24.291Z",
               "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Form2.cs [Dise\u00F1o]",
+              "DocumentMoniker": "D:\\Documentos\\Programacion\\Arancibia\\Trabajo Practico N\u00B01 - El Retorno Del Dev\\El mismo enano comunista 3 XDDDDDDDDDDD\\Form2.cs",
+              "RelativeDocumentMoniker": "El mismo enano comunista 3 XDDDDDDDDDDD\\Form2.cs",
+              "ToolTip": "D:\\Documentos\\Programacion\\Arancibia\\Trabajo Practico N\u00B01 - El Retorno Del Dev\\El mismo enano comunista 3 XDDDDDDDDDDD\\Form2.cs [Dise\u00F1o]",
+              "RelativeToolTip": "El mismo enano comunista 3 XDDDDDDDDDDD\\Form2.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-05T19:44:12.446Z"
             },
             {
               "$type": "Document",
@@ -52,22 +63,9 @@
               "RelativeDocumentMoniker": "El mismo enano comunista 3 XDDDDDDDDDDD\\Form1.Designer.cs",
               "ToolTip": "D:\\Documentos\\Programacion\\Arancibia\\Trabajo Practico N\u00B01 - El Retorno Del Dev\\El mismo enano comunista 3 XDDDDDDDDDDD\\Form1.Designer.cs",
               "RelativeToolTip": "El mismo enano comunista 3 XDDDDDDDDDDD\\Form1.Designer.cs",
-              "ViewState": "AgIAAN8AAAAAAAAAAAAmwPAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAJMAAAAAAAAAAIAxwKEAAAAwAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-05T18:27:55.855Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Form1.cs",
-              "DocumentMoniker": "D:\\Documentos\\Programacion\\Arancibia\\Trabajo Practico N\u00B01 - El Retorno Del Dev\\El mismo enano comunista 3 XDDDDDDDDDDD\\Form1.cs",
-              "RelativeDocumentMoniker": "El mismo enano comunista 3 XDDDDDDDDDDD\\Form1.cs",
-              "ToolTip": "D:\\Documentos\\Programacion\\Arancibia\\Trabajo Practico N\u00B01 - El Retorno Del Dev\\El mismo enano comunista 3 XDDDDDDDDDDD\\Form1.cs",
-              "RelativeToolTip": "El mismo enano comunista 3 XDDDDDDDDDDD\\Form1.cs",
-              "ViewState": "AgIAAJcAAAAAAAAAAAAawIsAAAAQAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-31T22:51:13.016Z",
               "EditorCaption": ""
             },
             {
@@ -78,10 +76,21 @@
               "RelativeDocumentMoniker": "El mismo enano comunista 3 XDDDDDDDDDDD\\Producto.cs",
               "ToolTip": "D:\\Documentos\\Programacion\\Arancibia\\Trabajo Practico N\u00B01 - El Retorno Del Dev\\El mismo enano comunista 3 XDDDDDDDDDDD\\Producto.cs",
               "RelativeToolTip": "El mismo enano comunista 3 XDDDDDDDDDDD\\Producto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAgwAgAAAAMAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACEAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-31T22:47:00.449Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-31T22:47:00.449Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Form1.cs",
+              "DocumentMoniker": "D:\\Documentos\\Programacion\\Arancibia\\Trabajo Practico N\u00B01 - El Retorno Del Dev\\El mismo enano comunista 3 XDDDDDDDDDDD\\Form1.cs",
+              "RelativeDocumentMoniker": "El mismo enano comunista 3 XDDDDDDDDDDD\\Form1.cs",
+              "ToolTip": "D:\\Documentos\\Programacion\\Arancibia\\Trabajo Practico N\u00B01 - El Retorno Del Dev\\El mismo enano comunista 3 XDDDDDDDDDDD\\Form1.cs",
+              "RelativeToolTip": "El mismo enano comunista 3 XDDDDDDDDDDD\\Form1.cs",
+              "ViewState": "AgIAALgAAAAAAAAAAAD4v60AAAA/AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-31T22:51:13.016Z"
             }
           ]
         }
