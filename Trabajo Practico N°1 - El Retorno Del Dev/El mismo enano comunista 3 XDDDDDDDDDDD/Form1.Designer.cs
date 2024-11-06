@@ -151,13 +151,16 @@
             // 
             // dataGridView1
             // 
-            dataGridView1.BackgroundColor = SystemColors.Control;
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.GridColor = SystemColors.InactiveCaptionText;
-            dataGridView1.Location = new Point(658, 59);
+            dataGridView1 = new System.Windows.Forms.DataGridView();
+            dataGridView1.BackgroundColor = System.Drawing.SystemColors.Control;
+            dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.GridColor = System.Drawing.SystemColors.InactiveCaptionText;
+            dataGridView1.Location = new System.Drawing.Point(658, 59);
             dataGridView1.Name = "dataGridView1";
-            dataGridView1.Size = new Size(452, 393);
+            dataGridView1.Size = new System.Drawing.Size(452, 393);
             dataGridView1.TabIndex = 9;
+            //dataGridView1.SelectionChanged += new System.EventHandler(dataGridView1_SelectionChanged);
+            //Controls.Add(dataGridView1);
             // 
             // ListaXD
             // 
@@ -282,11 +285,11 @@
             // 
             label7.AutoSize = true;
             label7.Font = new Font("Segoe UI", 12F);
-            label7.Location = new Point(796, 504);
+            label7.Location = new Point(796, 496);
             label7.Name = "label7";
-            label7.Size = new Size(181, 42);
+            label7.Size = new Size(169, 21);
             label7.TabIndex = 22;
-            label7.Text = "Filtar Por Precios Entre:   \r\n ";
+            label7.Text = "Filtar Por Precios Entre:";
             // 
             // label8
             // 

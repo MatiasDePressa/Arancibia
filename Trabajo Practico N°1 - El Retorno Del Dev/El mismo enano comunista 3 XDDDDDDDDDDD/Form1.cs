@@ -30,6 +30,32 @@ namespace El_mismo_enano_comunista_3_XDDDDDDDDDDD
             dataGridView1.DataSource = RepositorioGlobal.repositorio;
         }
 
+        //private void dataGridView1_SelectionChanged(object sender, EventArgs e)
+        //{
+        //    try
+        //    {
+        //       if (dataGridView1.Rows.Count > 0 && dataGridView1.SelectedRows.Count > 0)
+        //       {
+        //           if (dataGridView1.SelectedRows[0].Index >= 0) // Verifica que la fila seleccionada es válida
+        //           {
+        //               int selectedId = Convert.ToInt32(dataGridView1.SelectedRows[0].Cells["id"].Value);
+        //               Producto producto = RepositorioGlobal.repositorio.FirstOrDefault(p => p.id == selectedId);
+        //
+        //               if (producto != null)
+        //               {
+        //                   textBox3.Text = producto.id.ToString();
+        //                   textBox2.Text = producto.precio.ToString();
+        //                   textBox1.Text = producto.descripcion;
+        //                   textBox6.SelectedItem = producto.Categoria;
+        //               }
+        //           }
+        //       }
+        //    }
+        //    catch
+        //    {
+        //        MessageBox.Show("no se como llamar a este error porfavor que alguien me mate llevo 9 codeando");
+        //    }
+        //}
 
         // basicamente toma la lista de las categorias y la muestra en el combo box
         // antiguamente lo estuve haciendo con una llamada desde el form2
@@ -132,41 +158,35 @@ namespace El_mismo_enano_comunista_3_XDDDDDDDDDDD
         //solo que busca el id en la lista y sobreescribe los datos del precio y de la descripcion
         private void buttonEditar_Click(object sender, EventArgs e)
         {
-
-            try
+            if (dataGridView1.SelectedRows.Count > 0)
             {
-                if (!ValidarProducto())
+                DataGridViewRow fila = dataGridView1.SelectedRows[0];
+                Producto productoParaEditar = RepositorioGlobal.repositorio.FirstOrDefault(p => p.id == int.Parse(fila.Cells["id"].Value.ToString()));
+
+                if (productoParaEditar != null)
                 {
-                    return;
-                }
+                    // 2. Actualizar el Producto
+                    productoParaEditar.precio = decimal.Parse(textBox2.Text);
+                    productoParaEditar.descripcion = textBox1.Text;
+                    productoParaEditar.Categoria = textBox6.SelectedItem as Categoria;
 
-                int id = int.Parse(textBox3.Text);
-                Producto producto = RepositorioGlobal.repositorio.FirstOrDefault(p => p.id == id);
+                    MessageBox.Show($"Producto actualizado:\nid: {productoParaEditar.id}");
 
-                if (producto != null)
-                {
-                    producto.precio = decimal.Parse(textBox2.Text);
-                    producto.descripcion = textBox1.Text;
-                    producto.Categoria = textBox6.SelectedItem as Categoria;
-
-                    MessageBox.Show($"Producto actualizado:\nid: {producto.id}\nPrecio: {producto.precio}\nDescripción: {producto.descripcion},\nCategoria: {producto.Categoria.Nombre}");
-
+                    // Actualizar el DataGridView
                     CargarDatosEnDataGridView();
-
-                    textBox1.Clear();
-                    textBox2.Clear();
-                    textBox3.Clear();
                 }
                 else
                 {
-                    MessageBox.Show("Error Boton Editar, producto no encontrado");
+                    MessageBox.Show("Producto no encontrado.");
                 }
             }
-            catch (Exception ex)
+            else
             {
-                MessageBox.Show($"Error Boton Editar: {ex.Message}");
+                MessageBox.Show("Seleccione un producto para editar.");
             }
         }
+
+
 
         //recorre la lista, encuentra el id, si lo encuentra: agarra los datos y los muestra en el
         //label, si no los encuentra: te dice "no manin, tu no estas en la lista no te puedo dejar
@@ -201,32 +221,29 @@ namespace El_mismo_enano_comunista_3_XDDDDDDDDDDD
         //coloque nada en el precio o la descripcion, mas que nada porque es totalmente useless
         private void buttonEliminar_Click(object sender, EventArgs e)
         {
-
-            try
+            if (dataGridView1.SelectedRows.Count > 0)
             {
-                int id = int.Parse(textBox3.Text);
-                Producto producto = RepositorioGlobal.repositorio.FirstOrDefault(p => p.id == id);
+                DataGridViewRow fila = dataGridView1.SelectedRows[0];
+                Producto productoParaEliminar = RepositorioGlobal.repositorio.FirstOrDefault(p => p.id == int.Parse(fila.Cells["id"].Value.ToString()));
 
-                if (producto != null)
+                if (productoParaEliminar != null)
                 {
-                    RepositorioGlobal.repositorio.Remove(producto);
+                    // 2. Eliminar el Producto
+                    RepositorioGlobal.repositorio.Remove(productoParaEliminar);
 
-                    MessageBox.Show($"Producto eliminado:\nid: {id}");
+                    MessageBox.Show($"Producto eliminado:\nid: {productoParaEliminar.id}");
 
+                    // Actualizar el DataGridView
                     CargarDatosEnDataGridView();
-
-                    textBox1.Clear();
-                    textBox2.Clear();
-                    textBox3.Clear();
                 }
                 else
                 {
-                    MessageBox.Show("Error Boton Eliminar, producto no encontrado");
+                    MessageBox.Show("Producto no encontrado.");
                 }
             }
-            catch (Exception ex)
+            else
             {
-                MessageBox.Show($"Error Boton Eliminar: {ex.Message}");
+                MessageBox.Show("Seleccione un producto para eliminar.");
             }
         }
 
