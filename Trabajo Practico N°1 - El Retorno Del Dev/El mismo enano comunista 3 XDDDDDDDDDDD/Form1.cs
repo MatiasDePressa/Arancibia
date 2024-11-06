@@ -11,6 +11,10 @@ namespace El_mismo_enano_comunista_3_XDDDDDDDDDDD
 {
     public partial class Form1 : Form
     {
+
+    //FUNCIONES LOGICAS:
+
+        //inicializa el Formulario llamando a la funcion del form1.designer
         public Form1()
         {
             InitializeComponent();
@@ -34,6 +38,9 @@ namespace El_mismo_enano_comunista_3_XDDDDDDDDDDD
             }
         }
 
+
+        //Esta funcion selecciona los datos de un objeto en una fila seleccionada del datagridview
+        //estuve relog mas de 5 horas tratando de que funcionara, no es lo mejor del universo pero anda
         private void dataGridView1_SelectionChanged(object sender, EventArgs e)
         {
             try
@@ -61,6 +68,9 @@ namespace El_mismo_enano_comunista_3_XDDDDDDDDDDD
             }
         }
 
+
+        //funcion sencilla que filtra los productos por el rango de precios selccionados
+        //funciona muy parecido a una consulta SQL para seleccionar datos especificos de una lista
         private void FiltrarProductosPorPrecio()
         {
             try
@@ -75,7 +85,7 @@ namespace El_mismo_enano_comunista_3_XDDDDDDDDDDD
                     }
                     else
                     {
-                        dataGridView1.DataSource = null; // No hay productos en el rango
+                        dataGridView1.DataSource = null;
                         MessageBox.Show("No hay productos en el rango de precios especificado.");
                     }
                 }
@@ -104,6 +114,16 @@ namespace El_mismo_enano_comunista_3_XDDDDDDDDDDD
             textBox6.ValueMember = "Id";
         }
 
+        //al cargar el formulario tambien carga el grid y actualixa el selected de las categorias
+        //es mas que nada para hacer limpieza del sistema, evitar errores y actualizar todo ni bien ejecutas
+        //maybe no es lo mejor pero funca
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            CargarDatosEnDataGridView();
+            ActualizarComboBoxCategorias();
+        }
+
+        //FUNCIONES PARA VALIDACIONES:
 
         //validar los datos del producto (no estoy orgulloso de esta funcion, pero al menos funciona)
         //dato curioso es solo una segunda barrera en caso de que la validacion por teclas no ande
@@ -152,6 +172,8 @@ namespace El_mismo_enano_comunista_3_XDDDDDDDDDDD
             }
         }
 
+    //FUNCIONES PARA LOS BOTONES:
+
         //agregar un producto a la lista
         //no tiene mucha logica, toma los datos de los textbox, crea un objeto Producto,
         //lo almacena en la lista y lo muestra en el grid
@@ -190,6 +212,12 @@ namespace El_mismo_enano_comunista_3_XDDDDDDDDDDD
 
         //la logica es la misma que en la del boton agregar 
         //solo que busca el id en la lista y sobreescribe los datos del precio y de la descripcion
+        //todo los comentarios de arriba son mentira, los hice cuando pense que estaba por terminar
+        //eso fue como 4 horas antes de querer irme a vivir a las montañas por culpa del datagridview
+        //y su forma maquiavelica de seleccionar datos en una fila
+        //asi que basicamente tomo los datos de una posicion en especifica
+        //los copio en un objeto nuevo y sobreescribo el objeto viejo por el nuevo
+        //todo esto en el indice seleccionado
         private void buttonEditar_Click(object sender, EventArgs e)
         {
             try
@@ -203,14 +231,12 @@ namespace El_mismo_enano_comunista_3_XDDDDDDDDDDD
                     {
                         Producto productoModificar = RepositorioGlobal.repositorio[indice];
 
-                        productoModificar.id = int.Parse(textBox3.Text.ToString());
                         productoModificar.precio = decimal.Parse(textBox2.Text);
                         productoModificar.descripcion = textBox1.Text;
                         productoModificar.Categoria = textBox6.SelectedItem as Categoria;
 
                         RepositorioGlobal.repositorio[indice] = productoModificar;
 
-                        // Actualizar el DataGridView
                         CargarDatosEnDataGridView();
 
                         textBox3.Clear();
@@ -227,9 +253,6 @@ namespace El_mismo_enano_comunista_3_XDDDDDDDDDDD
                 MessageBox.Show("Error al actualizar el producto");
             }
         }
-
-
-
 
         //recorre la lista, encuentra el id, si lo encuentra: agarra los datos y los muestra en el
         //label, si no los encuentra: te dice "no manin, tu no estas en la lista no te puedo dejar
@@ -262,6 +285,11 @@ namespace El_mismo_enano_comunista_3_XDDDDDDDDDDD
 
         //tiene la misma logica, busca el id y lo manda a volar, aqui no hace falta que se le 
         //coloque nada en el precio o la descripcion, mas que nada porque es totalmente useless
+        //aqui paso lo mismo que con editar boton, los comentarios son antiguos
+        //(los dejo por cariño)
+        //pero basicamente funciona tomando el id del objeto seleccionado y lo va comparando con los
+        //de la lista, cuando lo encuentra lo manda al valhala
+        //Rest in Peace, Descanse en pez, pobre objeto
         private void buttonEliminar_Click(object sender, EventArgs e)
         {
             try
@@ -295,26 +323,24 @@ namespace El_mismo_enano_comunista_3_XDDDDDDDDDDD
             }
         }
 
+
+        //al presionar el boton va al filtro
+        //¿que? ¿esperabas algun chiste malo?
+        //hoy no, entre en depresion despues de programar esto
+        //tengo pesadillas con este trabajo
+        //me persigue una tabla malefica con errores de ejecucion
+        //ahora mismo estoy llorando del terror
         private void filtro_Click(object sender, EventArgs e)
         {
             FiltrarProductosPorPrecio();
         }
 
+        //menos ciencia que la mortadela
+        //presionas este boton y te muestra todos los objetos .
         private void quitarFiltro_Click(object sender, EventArgs e)
         {
             CargarDatosEnDataGridView();
         }
-
-
-        //al cargar el formulario tambien carga el grid y actualixa el selected de las categorias
-        //es mas que nada para hacer limpieza del sistema, evitar errores y actualizaciones
-        //maybe no es lo mejor pero funca
-        private void Form1_Load(object sender, EventArgs e)
-        {
-            CargarDatosEnDataGridView();
-            ActualizarComboBoxCategorias();
-        }
-
 
         //carga el formulario de las categorias
         //no es ingenieria cuantica, simplemente crea un objeto de form2 y lo carga
@@ -330,5 +356,14 @@ namespace El_mismo_enano_comunista_3_XDDDDDDDDDDD
                 MessageBox.Show("No se pudo conectar con el Form2");
             }
         }
+        //musica de victoria: https://open.spotify.com/intl-es/track/7uuo02BIR76qZ6ZXQhz7Ys?si=11df9338aaad4f93
     }
 }
+//como consepto pedagogico final, he de decir que considero que los pensamientos intrusivos me
+//ganaron y por ello esta lleno de comentarios extraños y chistes malos
+//considero que es una buena practica para desestresar debido al tiempo que me tomo poder desarrollar
+//y analizar con detalle cada una de las consignas, entienda que estos comentarios no son para ofender
+//y mucho menos algun tipo de burla. son un medio para que a lo largo del desarrollo del programa
+//uno pueda relarse un poco liberando la frustracion como mejor puede.
+//-ATTE: El equipo de desarrollo
+//PD: necesito un chocolate que despues de este trabajo me bajo la presion

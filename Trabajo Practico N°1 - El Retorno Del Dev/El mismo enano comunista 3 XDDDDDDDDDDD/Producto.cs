@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace El_mismo_enano_comunista_3_XDDDDDDDDDDD
 {
+    //creacion de la clase categoria con sus atributos
     public class Categoria
     {
         public int Id { get; set; }
@@ -17,12 +18,16 @@ namespace El_mismo_enano_comunista_3_XDDDDDDDDDDD
             this.Nombre = nombre;
         }
 
+        //es una funcion que permite devolver solo el paramtro del nombre para mostrar en
+        //el data grid view del form principal, nada mas que eso
         public override string ToString()
         {
             return this.Nombre;
         }
     }
 
+    //funcion de la clase producto que tiene una herencia de catagoria
+    //de esta menera se pueden enlazar categoria y producto sin mucho esfuerzo
     public class Producto
     {
         public int id { get; set; }
@@ -39,6 +44,10 @@ namespace El_mismo_enano_comunista_3_XDDDDDDDDDDD
         }
     }
 
+    //son las dos listas, la de productos y la de categorias
+    //porque en dos statics distintos?
+    //no se
+    //no lo pense antes, pero ya es tarde para cambiarlo
     public static class RepositorioGlobal
     {
         public static List<Producto> repositorio = new List<Producto>();
