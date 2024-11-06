@@ -31,6 +31,32 @@ namespace El_mismo_enano_comunista_3_XDDDDDDDDDDD
             return true;
         }
 
+        private void dataGridView1_SelectionChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (dataGridView1.SelectedRows.Count > 0)
+                {
+                    DataGridViewRow fila = dataGridView1.SelectedRows[0];
+                    if (fila.Cells["Id"].Value != null)
+                    {
+                        int selectedId = int.Parse(fila.Cells["Id"].Value.ToString());
+                        Categoria categoria = RepositorioCategorias.categorias.FirstOrDefault(c => c.Id == selectedId);
+
+                        if (categoria != null)
+                        {
+                            textID.Text = categoria.Id.ToString();
+                            textNombre.Text = categoria.Nombre;
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error al cargar los datos de la categoría: {ex.Message}");
+            }
+        }
+
         private void textID_TextChanged(object sender, EventArgs e)
         {
             if (System.Text.RegularExpressions.Regex.IsMatch(textID.Text, "[^0-9]"))
@@ -43,7 +69,11 @@ namespace El_mismo_enano_comunista_3_XDDDDDDDDDDD
         private void CargarDatosEnDataGridView()
         {
             dataGridView1.DataSource = null;
-            dataGridView1.DataSource = RepositorioCategorias.categorias;
+
+            if (RepositorioCategorias.categorias != null && RepositorioCategorias.categorias.Count > 0)
+            {
+                dataGridView1.DataSource = RepositorioCategorias.categorias;
+            }
         }
 
 
@@ -81,66 +111,69 @@ namespace El_mismo_enano_comunista_3_XDDDDDDDDDDD
         {
             try
             {
-
-                if (!ValidarCategoria())
+                if (dataGridView1.SelectedRows.Count > 0)
                 {
-                    return;
-                }
+                    DataGridViewRow fila = dataGridView1.SelectedRows[0];
+                    int indice = RepositorioCategorias.categorias.FindIndex(c => c.Id == int.Parse(fila.Cells["Id"].Value.ToString()));
 
-                int id = int.Parse(textID.Text);
-                Categoria categoria = RepositorioCategorias.categorias.FirstOrDefault(c => c.Id == id);
+                    if (indice >= 0)
+                    {
+                        Categoria categoriaModificar = RepositorioCategorias.categorias[indice];
 
-                if (categoria != null)
-                {
-                    categoria.Nombre = textNombre.Text;
+                        categoriaModificar.Nombre = textNombre.Text;
 
-                    formPrincipal.ActualizarComboBoxCategorias();
-                    CargarDatosEnDataGridView();
+                        RepositorioCategorias.categorias[indice] = categoriaModificar;
 
-                    MessageBox.Show("Categoría editada con éxito.");
-                }
-                else
-                {
-                    MessageBox.Show("Categoría no encontrada.");
+                        // Actualizar el DataGridView
+                        CargarDatosEnDataGridView();
+                        formPrincipal.ActualizarComboBoxCategorias();
+
+                        textID.Clear();
+                        textNombre.Clear();
+
+                        MessageBox.Show("Categoría actualizada con éxito.");
+                    }
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error al editar la categoría");
+                MessageBox.Show($"Error al actualizar la categoría: {ex.Message}");
             }
         }
+
 
         private void buttonEliminarC_Click(object sender, EventArgs e)
         {
             try
             {
-
-                if (!ValidarCategoria())
+                if (dataGridView1.SelectedRows.Count > 0)
                 {
-                    return;
-                }
+                    DataGridViewRow fila = dataGridView1.SelectedRows[0];
+                    int selectedId = int.Parse(fila.Cells["Id"].Value.ToString());
 
-                int id = int.Parse(textID.Text);
-                Categoria categoria = RepositorioCategorias.categorias.FirstOrDefault(c => c.Id == id);
+                    Categoria categoriaParaEliminar = RepositorioCategorias.categorias.FirstOrDefault(c => c.Id == selectedId);
 
-                if (categoria != null)
-                {
-                    RepositorioCategorias.categorias.Remove(categoria);
-                    formPrincipal.ActualizarComboBoxCategorias();
-                    CargarDatosEnDataGridView();
+                    if (categoriaParaEliminar != null)
+                    {
+                        RepositorioCategorias.categorias.Remove(categoriaParaEliminar);
 
-                    MessageBox.Show("Categoría eliminada con éxito.");
-                }
-                else
-                {
-                    MessageBox.Show("Categoría no encontrada.");
+                        // Actualizar el DataGridView
+                        CargarDatosEnDataGridView();
+                        formPrincipal.ActualizarComboBoxCategorias();
+
+                        textID.Clear();
+                        textNombre.Clear();
+
+                        MessageBox.Show($"Categoría eliminada:\nid: {selectedId}");
+                    }
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error al eliminar la categoría");
+                MessageBox.Show($"Error al eliminar la categoría: {ex.Message}");
             }
         }
+
 
         private void button1_Click(object sender, EventArgs e)
         {

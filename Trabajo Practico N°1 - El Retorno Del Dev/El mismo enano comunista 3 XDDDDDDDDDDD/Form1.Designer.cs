@@ -52,6 +52,7 @@
             filtro = new Button();
             label7 = new Label();
             label8 = new Label();
+            quitarFiltro = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             panel1.SuspendLayout();
             SuspendLayout();
@@ -151,16 +152,14 @@
             // 
             // dataGridView1
             // 
-            dataGridView1 = new System.Windows.Forms.DataGridView();
-            dataGridView1.BackgroundColor = System.Drawing.SystemColors.Control;
-            dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.GridColor = System.Drawing.SystemColors.InactiveCaptionText;
-            dataGridView1.Location = new System.Drawing.Point(658, 59);
+            dataGridView1.BackgroundColor = SystemColors.Control;
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.GridColor = SystemColors.InactiveCaptionText;
+            dataGridView1.Location = new Point(658, 59);
             dataGridView1.Name = "dataGridView1";
-            dataGridView1.Size = new System.Drawing.Size(452, 393);
+            dataGridView1.Size = new Size(452, 393);
             dataGridView1.TabIndex = 9;
-            //dataGridView1.SelectionChanged += new System.EventHandler(dataGridView1_SelectionChanged);
-            //Controls.Add(dataGridView1);
+            dataGridView1.CellContentClick += dataGridView1_SelectionChanged;
             // 
             // ListaXD
             // 
@@ -257,14 +256,14 @@
             // 
             // precio1
             // 
-            precio1.Location = new Point(796, 525);
+            precio1.Location = new Point(801, 484);
             precio1.Name = "precio1";
             precio1.Size = new Size(76, 23);
             precio1.TabIndex = 19;
             // 
             // precio2
             // 
-            precio2.Location = new Point(900, 525);
+            precio2.Location = new Point(905, 484);
             precio2.Name = "precio2";
             precio2.Size = new Size(76, 23);
             precio2.TabIndex = 20;
@@ -274,18 +273,19 @@
             filtro.BackColor = Color.FromArgb(128, 128, 255);
             filtro.Font = new Font("Segoe UI", 12F);
             filtro.ForeColor = SystemColors.ActiveCaptionText;
-            filtro.Location = new Point(823, 554);
+            filtro.Location = new Point(828, 513);
             filtro.Name = "filtro";
             filtro.Size = new Size(126, 34);
             filtro.TabIndex = 21;
             filtro.Text = "Filtrar";
             filtro.UseVisualStyleBackColor = false;
+            filtro.Click += filtro_Click;
             // 
             // label7
             // 
             label7.AutoSize = true;
             label7.Font = new Font("Segoe UI", 12F);
-            label7.Location = new Point(796, 496);
+            label7.Location = new Point(801, 455);
             label7.Name = "label7";
             label7.Size = new Size(169, 21);
             label7.TabIndex = 22;
@@ -295,11 +295,24 @@
             // 
             label8.AutoSize = true;
             label8.Font = new Font("Segoe UI", 12F);
-            label8.Location = new Point(878, 525);
+            label8.Location = new Point(883, 484);
             label8.Name = "label8";
             label8.Size = new Size(16, 21);
             label8.TabIndex = 23;
             label8.Text = "-";
+            // 
+            // quitarFiltro
+            // 
+            quitarFiltro.BackColor = Color.FromArgb(128, 128, 255);
+            quitarFiltro.Font = new Font("Segoe UI", 12F);
+            quitarFiltro.ForeColor = SystemColors.ActiveCaptionText;
+            quitarFiltro.Location = new Point(828, 554);
+            quitarFiltro.Name = "quitarFiltro";
+            quitarFiltro.Size = new Size(126, 34);
+            quitarFiltro.TabIndex = 24;
+            quitarFiltro.Text = "Quitar Filtro";
+            quitarFiltro.UseVisualStyleBackColor = false;
+            quitarFiltro.Click += quitarFiltro_Click;
             // 
             // Form1
             // 
@@ -307,6 +320,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ControlLight;
             ClientSize = new Size(1153, 622);
+            Controls.Add(quitarFiltro);
             Controls.Add(label8);
             Controls.Add(filtro);
             Controls.Add(precio2);
@@ -365,5 +379,6 @@
         private Button filtro;
         private Label label7;
         private Label label8;
+        private Button quitarFiltro;
     }
 }

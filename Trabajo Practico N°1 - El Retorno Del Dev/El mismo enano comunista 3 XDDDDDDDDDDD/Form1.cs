@@ -31,42 +31,65 @@ namespace El_mismo_enano_comunista_3_XDDDDDDDDDDD
             if (RepositorioGlobal.repositorio != null && RepositorioGlobal.repositorio.Count > 0)
             {
                 dataGridView1.DataSource = RepositorioGlobal.repositorio;
-                DataGridViewRow fila = dataGridView1.SelectedRows[0];
-                int indice = RepositorioGlobal.repositorio.FindIndex(p => p.id == int.Parse(fila.Cells["id"].Value.ToString()));
-
-
-                //textBox2.Text = producto.precio.ToString();
-                //textBox1.Text = producto.descripcion;
-                //textBox6.SelectedItem = producto.Categoria;
             }
         }
 
-        //private void dataGridView1_SelectionChanged(object sender, EventArgs e)
-        //{
-        //    try
-        //    {
-        //       if (dataGridView1.Rows.Count > 0 && dataGridView1.SelectedRows.Count > 0)
-        //       {
-        //           if (dataGridView1.SelectedRows[0].Index >= 0) // Verifica que la fila seleccionada es válida
-        //           {
-        //               int selectedId = Convert.ToInt32(dataGridView1.SelectedRows[0].Cells["id"].Value);
-        //               Producto producto = RepositorioGlobal.repositorio.FirstOrDefault(p => p.id == selectedId);
-        //
-        //               if (producto != null)
-        //               {
-        //                   textBox3.Text = producto.id.ToString();
-        //                   textBox2.Text = producto.precio.ToString();
-        //                   textBox1.Text = producto.descripcion;
-        //                   textBox6.SelectedItem = producto.Categoria;
-        //               }
-        //           }
-        //       }
-        //    }
-        //    catch
-        //    {
-        //        MessageBox.Show("no se como llamar a este error porfavor que alguien me mate llevo 9 codeando");
-        //    }
-        //}
+        private void dataGridView1_SelectionChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (dataGridView1.SelectedRows.Count > 0)
+                {
+                    DataGridViewRow fila = dataGridView1.SelectedRows[0];
+                    if (fila.Cells["id"].Value != null)
+                    {
+                        int selectedId = int.Parse(fila.Cells["id"].Value.ToString());
+                        Producto producto = RepositorioGlobal.repositorio.FirstOrDefault(p => p.id == selectedId);
+
+                        if (producto != null)
+                        {
+                            textBox2.Text = producto.precio.ToString();
+                            textBox1.Text = producto.descripcion;
+                            textBox6.SelectedItem = producto.Categoria;
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error al cargar los datos del producto: {ex.Message}");
+            }
+        }
+
+        private void FiltrarProductosPorPrecio()
+        {
+            try
+            {
+                if (decimal.TryParse(precio1.Text, out decimal precioMin) && decimal.TryParse(precio2.Text, out decimal precioMax))
+                {
+                    var productosFiltrados = RepositorioGlobal.repositorio.Where(p => p.precio >= precioMin && p.precio <= precioMax).ToList();
+
+                    if (productosFiltrados.Any())
+                    {
+                        dataGridView1.DataSource = productosFiltrados;
+                    }
+                    else
+                    {
+                        dataGridView1.DataSource = null; // No hay productos en el rango
+                        MessageBox.Show("No hay productos en el rango de precios especificado.");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Por favor, ingrese valores válidos para el rango de precios.");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error al filtrar los productos: {ex.Message}");
+            }
+        }
+
 
         // basicamente toma la lista de las categorias y la muestra en el combo box
         // antiguamente lo estuve haciendo con una llamada desde el form2
@@ -169,33 +192,42 @@ namespace El_mismo_enano_comunista_3_XDDDDDDDDDDD
         //solo que busca el id en la lista y sobreescribe los datos del precio y de la descripcion
         private void buttonEditar_Click(object sender, EventArgs e)
         {
-            if (dataGridView1.SelectedRows.Count > 0)
+            try
             {
-                DataGridViewRow fila = dataGridView1.SelectedRows[0];
-                Producto productoParaEditar = RepositorioGlobal.repositorio.FirstOrDefault(p => p.id == int.Parse(fila.Cells["id"].Value.ToString()));
-
-                if (productoParaEditar != null)
+                if (dataGridView1.SelectedRows.Count > 0)
                 {
-                    // 2. Actualizar el Producto
-                    productoParaEditar.precio = decimal.Parse(textBox2.Text);
-                    productoParaEditar.descripcion = textBox1.Text;
-                    productoParaEditar.Categoria = textBox6.SelectedItem as Categoria;
+                    DataGridViewRow fila = dataGridView1.SelectedRows[0];
+                    int indice = RepositorioGlobal.repositorio.FindIndex(p => p.id == int.Parse(fila.Cells["id"].Value.ToString()));
 
-                    MessageBox.Show($"Producto actualizado:\nid: {productoParaEditar.id}");
+                    if (indice >= 0)
+                    {
+                        Producto productoModificar = RepositorioGlobal.repositorio[indice];
 
-                    // Actualizar el DataGridView
-                    CargarDatosEnDataGridView();
-                }
-                else
-                {
-                    MessageBox.Show("Producto no encontrado.");
+                        productoModificar.id = int.Parse(textBox3.Text.ToString());
+                        productoModificar.precio = decimal.Parse(textBox2.Text);
+                        productoModificar.descripcion = textBox1.Text;
+                        productoModificar.Categoria = textBox6.SelectedItem as Categoria;
+
+                        RepositorioGlobal.repositorio[indice] = productoModificar;
+
+                        // Actualizar el DataGridView
+                        CargarDatosEnDataGridView();
+
+                        textBox3.Clear();
+                        textBox2.Clear();
+                        textBox1.Clear();
+                        textBox6.SelectedIndex = -1;
+
+                        MessageBox.Show("Producto actualizado con éxito.");
+                    }
                 }
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("Seleccione un producto para editar.");
+                MessageBox.Show("Error al actualizar el producto");
             }
         }
+
 
 
 
@@ -232,31 +264,47 @@ namespace El_mismo_enano_comunista_3_XDDDDDDDDDDD
         //coloque nada en el precio o la descripcion, mas que nada porque es totalmente useless
         private void buttonEliminar_Click(object sender, EventArgs e)
         {
-            if (dataGridView1.SelectedRows.Count > 0)
+            try
             {
-                DataGridViewRow fila = dataGridView1.SelectedRows[0];
-                Producto productoParaEliminar = RepositorioGlobal.repositorio.FirstOrDefault(p => p.id == int.Parse(fila.Cells["id"].Value.ToString()));
-
-                if (productoParaEliminar != null)
+                if (dataGridView1.SelectedRows.Count > 0)
                 {
-                    // 2. Eliminar el Producto
-                    RepositorioGlobal.repositorio.Remove(productoParaEliminar);
+                    DataGridViewRow fila = dataGridView1.SelectedRows[0];
+                    int selectedId = int.Parse(fila.Cells["id"].Value.ToString());
 
-                    MessageBox.Show($"Producto eliminado:\nid: {productoParaEliminar.id}");
+                    Producto productoParaEliminar = RepositorioGlobal.repositorio.FirstOrDefault(p => p.id == selectedId);
 
-                    // Actualizar el DataGridView
-                    CargarDatosEnDataGridView();
-                }
-                else
-                {
-                    MessageBox.Show("Producto no encontrado.");
+                    if (productoParaEliminar != null)
+                    {
+                        RepositorioGlobal.repositorio.Remove(productoParaEliminar);
+
+                        MessageBox.Show($"Producto eliminado:\nid: {selectedId}");
+
+                        // Actualizar el DataGridView
+                        CargarDatosEnDataGridView();
+
+                        textBox3.Clear();
+                        textBox2.Clear();
+                        textBox1.Clear();
+                        textBox6.SelectedIndex = -1;
+                    }
                 }
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("Seleccione un producto para eliminar.");
+                MessageBox.Show($"Error al eliminar el producto");
             }
         }
+
+        private void filtro_Click(object sender, EventArgs e)
+        {
+            FiltrarProductosPorPrecio();
+        }
+
+        private void quitarFiltro_Click(object sender, EventArgs e)
+        {
+            CargarDatosEnDataGridView();
+        }
+
 
         //al cargar el formulario tambien carga el grid y actualixa el selected de las categorias
         //es mas que nada para hacer limpieza del sistema, evitar errores y actualizaciones
@@ -282,6 +330,5 @@ namespace El_mismo_enano_comunista_3_XDDDDDDDDDDD
                 MessageBox.Show("No se pudo conectar con el Form2");
             }
         }
-
     }
 }
