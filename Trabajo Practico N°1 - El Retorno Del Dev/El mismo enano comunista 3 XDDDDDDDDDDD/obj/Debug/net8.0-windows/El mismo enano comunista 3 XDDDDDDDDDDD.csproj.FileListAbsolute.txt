@@ -16,4 +16,3 @@ D:\Documentos\Programacion\Arancibia\Trabajo Practico N°1 - El Retorno Del Dev\
 D:\Documentos\Programacion\Arancibia\Trabajo Practico N°1 - El Retorno Del Dev\El mismo enano comunista 3 XDDDDDDDDDDD\obj\Debug\net8.0-windows\El mismo enano comunista 3 XDDDDDDDDDDD.genruntimeconfig.cache
 D:\Documentos\Programacion\Arancibia\Trabajo Practico N°1 - El Retorno Del Dev\El mismo enano comunista 3 XDDDDDDDDDDD\obj\Debug\net8.0-windows\ref\El mismo enano comunista 3 XDDDDDDDDDDD.dll
 D:\Documentos\Programacion\Arancibia\Trabajo Practico N°1 - El Retorno Del Dev\El mismo enano comunista 3 XDDDDDDDDDDD\obj\Debug\net8.0-windows\El_mismo_enano_comunista_3_XDDDDDDDDDDD.Form2.resources
-D:\Documentos\Programacion\Arancibia\Trabajo Practico N°1 - El Retorno Del Dev\El mismo enano comunista 3 XDDDDDDDDDDD\obj\Debug\net8.0-windows\El_mismo_enano_comunista_3_XDDDDDDDDDDD.FormCategorias.resources

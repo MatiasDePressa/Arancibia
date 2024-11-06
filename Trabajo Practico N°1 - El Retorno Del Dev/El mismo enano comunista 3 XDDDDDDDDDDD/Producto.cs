@@ -23,14 +23,14 @@ namespace El_mismo_enano_comunista_3_XDDDDDDDDDDD
         public int id { get; set; }
         public decimal precio { get; set; }
         public string descripcion { get; set; }
-        //public Categoria Categoria { get; set; }
+        public Categoria Categoria { get; set; }
 
-        public Producto(int id, decimal precio, string descripcion)//, Categoria categoria)
+        public Producto(int id, decimal precio, string descripcion, Categoria categoria)
         {
             this.id = id;
             this.precio = precio;
             this.descripcion = descripcion;
-            //Categoria = categoria;
+            this.Categoria = categoria;
         }
     }
 

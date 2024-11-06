@@ -30,6 +30,12 @@ namespace El_mismo_enano_comunista_3_XDDDDDDDDDDD
             dataGridView1.DataSource = RepositorioGlobal.repositorio;
         }
 
+
+        // basicamente toma la lista de las categorias y la muestra en el combo box
+        // antiguamente lo estuve haciendo con una llamada desde el form2
+        //pero me pare a pensar y dije: "mati, tenes una lista con las categorias
+        //¿porque %&(@#$= no mostras la lista y punto?"
+        //asi que solo carga la lista a la combobox y lo actualiza
         public void ActualizarComboBoxCategorias()
         {
             textBox6.DataSource = null;
@@ -101,16 +107,18 @@ namespace El_mismo_enano_comunista_3_XDDDDDDDDDDD
                 int id = int.Parse(textBox3.Text);
                 decimal precio = decimal.Parse(textBox2.Text);
                 string descripcion = textBox1.Text;
+                Categoria categoriaSeleccionada = textBox6.SelectedItem as Categoria;
 
-                Producto nuevoProducto = new Producto(id, precio, descripcion);
+                Producto nuevoProducto = new Producto(id, precio, descripcion, categoriaSeleccionada);
 
                 RepositorioGlobal.repositorio.Add(nuevoProducto);
 
-                MessageBox.Show($"Producto generado:\nid: {id}\nPrecio: {precio}\nDescripción: {descripcion}");
+                MessageBox.Show($"Producto generado:\nid: {id}\nPrecio: {precio}\nDescripción: {descripcion}\nCategoría: {categoriaSeleccionada.Nombre}");
 
                 textBox1.Clear();
                 textBox2.Clear();
                 textBox3.Clear();
+                textBox6.SelectedIndex = -1;
 
                 CargarDatosEnDataGridView();
             }
@@ -124,7 +132,6 @@ namespace El_mismo_enano_comunista_3_XDDDDDDDDDDD
         //solo que busca el id en la lista y sobreescribe los datos del precio y de la descripcion
         private void buttonEditar_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Boton Presionado");
 
             try
             {
@@ -140,8 +147,9 @@ namespace El_mismo_enano_comunista_3_XDDDDDDDDDDD
                 {
                     producto.precio = decimal.Parse(textBox2.Text);
                     producto.descripcion = textBox1.Text;
+                    producto.Categoria = textBox6.SelectedItem as Categoria;
 
-                    MessageBox.Show($"Producto actualizado:\nid: {producto.id}\nPrecio: {producto.precio}\nDescripción: {producto.descripcion}");
+                    MessageBox.Show($"Producto actualizado:\nid: {producto.id}\nPrecio: {producto.precio}\nDescripción: {producto.descripcion},\nCategoria: {producto.Categoria.Nombre}");
 
                     CargarDatosEnDataGridView();
 
@@ -170,13 +178,12 @@ namespace El_mismo_enano_comunista_3_XDDDDDDDDDDD
         {
             try
             {
-                MessageBox.Show("Boton Presionado");
                 int id = int.Parse(textBox4.Text);
                 Producto producto = RepositorioGlobal.repositorio.FirstOrDefault(p => p.id == id);
 
                 if (producto != null)
                 {
-                    label4.Text = $"Producto encontrado:\nid: {producto.id}\nPrecio: {producto.precio}\nDescripción: {producto.descripcion}";
+                    label4.Text = $"Producto encontrado:\nid: {producto.id}\nPrecio: {producto.precio}\nDescripción: {producto.descripcion},\n Categoria: {producto.Categoria.Nombre}";
                 }
                 else
                 {
@@ -194,7 +201,6 @@ namespace El_mismo_enano_comunista_3_XDDDDDDDDDDD
         //coloque nada en el precio o la descripcion, mas que nada porque es totalmente useless
         private void buttonEliminar_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Boton Presionado");
 
             try
             {
@@ -230,12 +236,20 @@ namespace El_mismo_enano_comunista_3_XDDDDDDDDDDD
         private void Form1_Load(object sender, EventArgs e)
         {
             CargarDatosEnDataGridView();
+            ActualizarComboBoxCategorias();
         }
 
         private void irACategoria_Click(object sender, EventArgs e)
         {
-            Form2 form2 = new Form2();
-            //form2.Show();
+            try
+            {
+                Form2 form2 = new Form2(this);
+                form2.Show();
+            }
+            catch
+            {
+                MessageBox.Show("No se pudo conectar con el Form2");
+            }
         }
 
     }

@@ -2,28 +2,61 @@
 using System.Linq;
 using System.Windows.Forms;
 using static System.Net.Mime.MediaTypeNames;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace El_mismo_enano_comunista_3_XDDDDDDDDDDD
 {
     public partial class Form2 : Form
     {
+        private Form1 formPrincipal;
 
-        public Form2()
+        public Form2(Form1 formPrincipal)
         {
-            try
+            InitializeComponent();
+            this.formPrincipal = formPrincipal;
+        }
+
+        private bool ValidarCategoria()
+        {
+            if (string.IsNullOrWhiteSpace(textID.Text) || !int.TryParse(textID.Text, out _))
             {
-                InitializeComponent();
+                MessageBox.Show("ID inválido. Debe ser un número entero.");
+                return false;
             }
-            catch
+            if (string.IsNullOrWhiteSpace(textNombre.Text))
             {
-                MessageBox.Show("Error al conectar con el formulario principal");
+                MessageBox.Show("El nombre no puede estar vacío.");
+                return false;
+            }
+            return true;
+        }
+
+        private void textID_TextChanged(object sender, EventArgs e)
+        {
+            if (System.Text.RegularExpressions.Regex.IsMatch(textID.Text, "[^0-9]"))
+            {
+                MessageBox.Show("Por favor, ingrese solo números enteros.");
+                textID.Text = textID.Text.Remove(textID.Text.Length - 1);
             }
         }
+
+        private void CargarDatosEnDataGridView()
+        {
+            dataGridView1.DataSource = null;
+            dataGridView1.DataSource = RepositorioCategorias.categorias;
+        }
+
 
         private void buttonCategoriaC_Click(object sender, EventArgs e)
         {
             try
             {
+
+                if (!ValidarCategoria()) 
+                { 
+                    return;
+                }
+
                 int id = int.Parse(textID.Text);
                 string nombre = textNombre.Text;
 
@@ -33,11 +66,14 @@ namespace El_mismo_enano_comunista_3_XDDDDDDDDDDD
                 textID.Clear();
                 textNombre.Clear();
 
+                formPrincipal.ActualizarComboBoxCategorias();
+                CargarDatosEnDataGridView();
+
                 MessageBox.Show("Categoría agregada con éxito.");
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error al agregar la categoría: " + ex.Message);
+                MessageBox.Show("Error al agregar la categoría");
             }
         }
 
@@ -45,12 +81,21 @@ namespace El_mismo_enano_comunista_3_XDDDDDDDDDDD
         {
             try
             {
+
+                if (!ValidarCategoria())
+                {
+                    return;
+                }
+
                 int id = int.Parse(textID.Text);
                 Categoria categoria = RepositorioCategorias.categorias.FirstOrDefault(c => c.Id == id);
 
                 if (categoria != null)
                 {
                     categoria.Nombre = textNombre.Text;
+
+                    formPrincipal.ActualizarComboBoxCategorias();
+                    CargarDatosEnDataGridView();
 
                     MessageBox.Show("Categoría editada con éxito.");
                 }
@@ -61,7 +106,7 @@ namespace El_mismo_enano_comunista_3_XDDDDDDDDDDD
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error al editar la categoría: " + ex.Message);
+                MessageBox.Show("Error al editar la categoría");
             }
         }
 
@@ -69,12 +114,20 @@ namespace El_mismo_enano_comunista_3_XDDDDDDDDDDD
         {
             try
             {
+
+                if (!ValidarCategoria())
+                {
+                    return;
+                }
+
                 int id = int.Parse(textID.Text);
                 Categoria categoria = RepositorioCategorias.categorias.FirstOrDefault(c => c.Id == id);
 
                 if (categoria != null)
                 {
                     RepositorioCategorias.categorias.Remove(categoria);
+                    formPrincipal.ActualizarComboBoxCategorias();
+                    CargarDatosEnDataGridView();
 
                     MessageBox.Show("Categoría eliminada con éxito.");
                 }
@@ -85,10 +138,19 @@ namespace El_mismo_enano_comunista_3_XDDDDDDDDDDD
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error al eliminar la categoría: " + ex.Message);
+                MessageBox.Show("Error al eliminar la categoría");
             }
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void Form2_Load(object sender, EventArgs e)
+        {
+            CargarDatosEnDataGridView();
+        }
+
     }
 }
-
-
