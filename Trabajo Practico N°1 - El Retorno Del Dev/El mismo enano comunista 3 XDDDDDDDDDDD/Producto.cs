@@ -16,6 +16,11 @@ namespace El_mismo_enano_comunista_3_XDDDDDDDDDDD
             this.Id = id;
             this.Nombre = nombre;
         }
+
+        public override string ToString()
+        {
+            return this.Nombre;
+        }
     }
 
     public class Producto

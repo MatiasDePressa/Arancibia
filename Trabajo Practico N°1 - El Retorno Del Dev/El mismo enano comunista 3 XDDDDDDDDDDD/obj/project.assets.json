@@ -8,23 +8,23 @@
     "net8.0-windows7.0": []
   },
   "packageFolders": {
-    "C:\\Users\\matia\\.nuget\\packages\\": {},
+    "C:\\Users\\Administrator\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Documentos\\Programacion\\Arancibia\\Trabajo Practico N°1 - El Retorno Del Dev\\El mismo enano comunista 3 XDDDDDDDDDDD\\El mismo enano comunista 3 XDDDDDDDDDDD.csproj",
+      "projectUniqueName": "C:\\Users\\Administrator\\Documents\\GitHub\\Arancibia\\Trabajo Practico N°1 - El Retorno Del Dev\\El mismo enano comunista 3 XDDDDDDDDDDD\\El mismo enano comunista 3 XDDDDDDDDDDD.csproj",
       "projectName": "El mismo enano comunista 3 XDDDDDDDDDDD",
-      "projectPath": "D:\\Documentos\\Programacion\\Arancibia\\Trabajo Practico N°1 - El Retorno Del Dev\\El mismo enano comunista 3 XDDDDDDDDDDD\\El mismo enano comunista 3 XDDDDDDDDDDD.csproj",
-      "packagesPath": "C:\\Users\\matia\\.nuget\\packages\\",
-      "outputPath": "D:\\Documentos\\Programacion\\Arancibia\\Trabajo Practico N°1 - El Retorno Del Dev\\El mismo enano comunista 3 XDDDDDDDDDDD\\obj\\",
+      "projectPath": "C:\\Users\\Administrator\\Documents\\GitHub\\Arancibia\\Trabajo Practico N°1 - El Retorno Del Dev\\El mismo enano comunista 3 XDDDDDDDDDDD\\El mismo enano comunista 3 XDDDDDDDDDDD.csproj",
+      "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Administrator\\Documents\\GitHub\\Arancibia\\Trabajo Practico N°1 - El Retorno Del Dev\\El mismo enano comunista 3 XDDDDDDDDDDD\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\matia\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Administrator\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -75,7 +75,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.403/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.302/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

@@ -2,7 +2,7 @@ using System.Windows.Forms;
 
 //hay 5.000.000 de trys mas que nada para aquellos usuarios que sean
 //"especiales". Ahora si quiere saber por que el nombre del proyecto es tan curioso
-//visite https://www.youtube.com/watch?v=eFE8NOD4qlE&t=23s
+//visite https://www.youtube.com/watch?v=eFE8NOD4qlE&t=0s
 //en los primero 15 segundos del video esta el lore
 //que vuelva chusommontero
 //voy a armar una campaña de kickstarted para que vuelva el no hiter
@@ -27,7 +27,18 @@ namespace El_mismo_enano_comunista_3_XDDDDDDDDDDD
         private void CargarDatosEnDataGridView()
         {
             dataGridView1.DataSource = null;
-            dataGridView1.DataSource = RepositorioGlobal.repositorio;
+
+            if (RepositorioGlobal.repositorio != null && RepositorioGlobal.repositorio.Count > 0)
+            {
+                dataGridView1.DataSource = RepositorioGlobal.repositorio;
+                DataGridViewRow fila = dataGridView1.SelectedRows[0];
+                int indice = RepositorioGlobal.repositorio.FindIndex(p => p.id == int.Parse(fila.Cells["id"].Value.ToString()));
+
+
+                //textBox2.Text = producto.precio.ToString();
+                //textBox1.Text = producto.descripcion;
+                //textBox6.SelectedItem = producto.Categoria;
+            }
         }
 
         //private void dataGridView1_SelectionChanged(object sender, EventArgs e)
@@ -203,7 +214,7 @@ namespace El_mismo_enano_comunista_3_XDDDDDDDDDDD
 
                 if (producto != null)
                 {
-                    label4.Text = $"Producto encontrado:\nid: {producto.id}\nPrecio: {producto.precio}\nDescripción: {producto.descripcion},\n Categoria: {producto.Categoria.Nombre}";
+                    label4.Text = $"Producto encontrado:\nid: {producto.id}\nPrecio: {producto.precio}\nDescripción: {producto.descripcion},\nCategoria: {producto.Categoria.Nombre}";
                 }
                 else
                 {
@@ -247,8 +258,8 @@ namespace El_mismo_enano_comunista_3_XDDDDDDDDDDD
             }
         }
 
-        //al cargar el formulario tambien carga el grid
-        //es mas que nada para hacer limpieza del sistema y evitar errores
+        //al cargar el formulario tambien carga el grid y actualixa el selected de las categorias
+        //es mas que nada para hacer limpieza del sistema, evitar errores y actualizaciones
         //maybe no es lo mejor pero funca
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -256,6 +267,9 @@ namespace El_mismo_enano_comunista_3_XDDDDDDDDDDD
             ActualizarComboBoxCategorias();
         }
 
+
+        //carga el formulario de las categorias
+        //no es ingenieria cuantica, simplemente crea un objeto de form2 y lo carga
         private void irACategoria_Click(object sender, EventArgs e)
         {
             try
