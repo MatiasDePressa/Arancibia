@@ -1,0 +1,10 @@
+C:\Users\matia\source\repos\Gestion_seguro\Gestion_seguro\bin\Debug\Gestion_seguro.exe.config
+C:\Users\matia\source\repos\Gestion_seguro\Gestion_seguro\bin\Debug\Gestion_seguro.exe
+C:\Users\matia\source\repos\Gestion_seguro\Gestion_seguro\bin\Debug\Gestion_seguro.pdb
+C:\Users\matia\source\repos\Gestion_seguro\Gestion_seguro\obj\Debug\Gestion_seguro.csproj.AssemblyReference.cache
+C:\Users\matia\source\repos\Gestion_seguro\Gestion_seguro\obj\Debug\Gestion_seguro.Form1.resources
+C:\Users\matia\source\repos\Gestion_seguro\Gestion_seguro\obj\Debug\Gestion_seguro.Properties.Resources.resources
+C:\Users\matia\source\repos\Gestion_seguro\Gestion_seguro\obj\Debug\Gestion_seguro.csproj.GenerateResource.cache
+C:\Users\matia\source\repos\Gestion_seguro\Gestion_seguro\obj\Debug\Gestion_seguro.csproj.CoreCompileInputs.cache
+C:\Users\matia\source\repos\Gestion_seguro\Gestion_seguro\obj\Debug\Gestion_seguro.exe
+C:\Users\matia\source\repos\Gestion_seguro\Gestion_seguro\obj\Debug\Gestion_seguro.pdb
